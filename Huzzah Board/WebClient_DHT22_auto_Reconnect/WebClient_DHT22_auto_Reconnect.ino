@@ -23,13 +23,13 @@ Serial.begin(115200);
  
  reconnect();
  pinMode(0, OUTPUT);
-
+ digitalWrite(0, LOW);
+ 
   dht.begin();
-
 }
 
 int value = 0;
-int queryDelay = 4000;
+int queryDelay = 300000;
 
 
 void loop() {
