@@ -11,8 +11,8 @@
 
 
   <?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', '1');
+  //error_reporting(E_ALL);
+  //ini_set('display_errors', '1');
 
   $mysqlhost="localhost";
   $mysqluser="logger";
@@ -42,8 +42,6 @@
     }
   }
 
-
-  echo json_encode($rows);
    ?>
 
 
@@ -72,16 +70,16 @@ new  Morris.Line({
 
 
     // The name of the data record attribute that contains x-values.
-    xkey: 'feuchtigkeit',
+    xkey: 'datum',
 
     // A list of names of data record attributes that contain y-values.
-    ykeys: ['temperatur'],
+    ykeys: ['temperatur', 'feuchtigkeit'],
 
     // Labels for the ykeys -- will be displayed when you hover over the
     // chart.
-    labels: ['Images Processed'],
+    labels: ['Temperatur','Feuchtigkeit'],
 
-    lineColors: ['#0b62a4'],
+    lineColors: ['#0b62a4', '#ff7706'],
     xLabels: 'hour',
 
     // Disables line smoothing
