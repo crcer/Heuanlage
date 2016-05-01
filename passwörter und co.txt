@@ -1,0 +1,9 @@
+MYSQL:
+  user: root
+  passwort: sensorlogger300
+MYSQL:
+  user: logger
+  passwort: Ci5hnkwV8
+Raspberry Pi:
+  user: pi
+  passwort: raspberry
