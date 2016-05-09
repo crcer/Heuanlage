@@ -55,7 +55,7 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  // We now create a URI for the request
  //String url = "/testwifi/index.html";
  String passwort = "Ci5hnkwV8";
- String tabelle ="one";
+ String tabelle ="two";
  
  float temperatur = dht.readTemperature();
  float feuchtigkeit = dht.readHumidity();
