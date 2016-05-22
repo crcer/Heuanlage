@@ -62,25 +62,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">TemperaturAdmin 1.4</a>
+                <a class="navbar-brand" href="index.php">TemperaturAdmin 1.4</a>
             </div>
             <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
+
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
@@ -89,17 +75,17 @@
 
 
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Übersicht</a>
+                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Übersicht</a>
                         </li>
 
 
                         <li>
-                            <a href="charts.html"><i class="fa fa-bar-chart-o fa-fw"></i> Graphen</a>
+                            <a href="charts.php"><i class="fa fa-bar-chart-o fa-fw"></i> Graphen</a>
                         </li>
 
 
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tabellen</a>
+                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tabellen</a>
                         </li>
 
 
