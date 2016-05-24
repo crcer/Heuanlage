@@ -47,6 +47,60 @@
 </style>
 
 
+
+
+
+
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+$mysqlhost="localhost";
+$mysqluser="logger";
+$mysqlpwd="Ci5hnkwV8";
+$mysqldb="logger";
+
+// --- Schreibe Daten in die Datenbank ---
+$connection = mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
+mysqli_select_db($connection, $mysqldb) or die("Konnte die Datenbank nicht auswählen!");
+
+
+// Das ist der Quary zu erstellen der Daten in der Datenbank
+$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 1";
+//Führe Quary aus.
+$roofResult = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nicht erfolgreich! :(");
+
+
+
+
+
+$roofTemp;
+$roofHum;
+while ($row = $roofResult->fetch_assoc())
+{
+
+    $roofTemp = $row["temperatur"];
+    $roofHum = $row["feuchtigkeit"];
+}
+
+// Das ist der Quary zu erstellen der Daten in der Datenbank
+$sql_query = "SELECT * FROM outside ORDER BY datum DESC LIMIT 1";
+//Führe Quary aus.
+$outsideResult = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nicht erfolgreich! :(");
+
+$outsideTemp;
+$outsideHum;
+while ($row = $outsideResult->fetch_assoc())
+{
+
+    $outsideTemp = $row["temperatur"];
+    $outsideHum = $row["feuchtigkeit"];
+}
+
+
+ ?>
+
+
 </head>
 
 <body>
@@ -144,7 +198,7 @@
                                   <i class="fa fa-sun-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
                               </div>
                               <div class="col-xs-9 text-right">
-                                  <div class="huge">Außen: 17 °C / 50%</div>
+                                  <div class="huge"><?php echo $roofTemp; ?></div>
                                   <div>Datum</div>
                               </div>
 
