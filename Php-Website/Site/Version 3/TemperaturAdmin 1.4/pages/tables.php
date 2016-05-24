@@ -55,10 +55,10 @@
             </div>
             <!-- /.navbar-header -->
 
-            
+
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav" id="side-menu">
 
                         <li>

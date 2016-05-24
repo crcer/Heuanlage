@@ -107,6 +107,23 @@ while ($row = $outsideResult->fetch_assoc())
 
 
 $differenz = $roofTemp - $outsideTemp;
+$differenzVorzeichen = "";
+$farbCode;
+
+if ($differenz > 0) {
+  $differenzVorzeichen = "+";
+  $farbCode = "#00AA00";
+}
+elseif ($differenz == 0) {
+  $farbCode = "#F0AD4E";
+}
+else {
+  $farbCode = "#FF0000";
+}
+
+
+//grün bei positiv
+//rot bei negativ
 
  ?>
 
@@ -134,7 +151,7 @@ $differenz = $roofTemp - $outsideTemp;
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav" id="side-menu">
 
 
@@ -174,20 +191,20 @@ $differenz = $roofTemp - $outsideTemp;
 
               <div class="col-lg-12 col-md-6">
                   <div class="panel panel-yellow">
-                      <div class="panel-heading">
+                      <div class="panel-heading" style=<?php echo "background-color:" . $farbCode; ?>> <!-- style=<?php echo "background-color:" . $farbCode; ?> -->
                           <div class="row">
 
                             <div class="col-xs-3">
                                 <i class="fa fa-flag-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge"><?php echo "Differenz: " . $differenz . " °C"?></div>
+                                <div class="huge"><?php echo "Differenz: " . $differenzVorzeichen . $differenz . " °C"?></div>
                                 <div>Datum</div>
                             </div>
                           </div>
                       </div>
                       <a href="#">
-                          <div class="panel-footer">
+                          <div class="panel-footer" style=<?php echo "color:" . $farbCode; ?>>
                               <span class="pull-left">View Details</span>
                               <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                               <div class="clearfix"></div>
@@ -250,13 +267,6 @@ $differenz = $roofTemp - $outsideTemp;
                         </a>
                     </div>
                 </div>
-
-
-
-
-
-
-
 
 
 

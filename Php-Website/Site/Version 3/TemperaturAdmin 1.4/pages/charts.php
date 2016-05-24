@@ -53,10 +53,10 @@
                 </button>
                 <a class="navbar-brand" href="index.php">TemperaturAdmin 1.4</a>
             </div>
-      
+
 
             <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav" id="side-menu">
 
 
