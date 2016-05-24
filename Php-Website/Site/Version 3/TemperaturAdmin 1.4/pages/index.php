@@ -190,7 +190,7 @@ else {
 
 
               <div class="col-lg-12 col-md-6">
-                  <div class="panel panel-yellow">
+                  <div class="panel panel-yellow" style=<?php echo "border-color:" . $farbCode; ?>>
                       <div class="panel-heading" style=<?php echo "background-color:" . $farbCode; ?>> <!-- style=<?php echo "background-color:" . $farbCode; ?> -->
                           <div class="row">
 
