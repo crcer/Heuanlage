@@ -76,11 +76,14 @@ $roofResult = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nich
 
 $roofTemp;
 $roofHum;
+$roofDate;
 while ($row = $roofResult->fetch_assoc())
 {
 
     $roofTemp = $row["temperatur"];
     $roofHum = $row["feuchtigkeit"];
+    $roofDate = $row["datum"];
+
 }
 
 // Das ist der Quary zu erstellen der Daten in der Datenbank
@@ -90,13 +93,20 @@ $outsideResult = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen n
 
 $outsideTemp;
 $outsideHum;
+$outsideDate;
 while ($row = $outsideResult->fetch_assoc())
 {
 
     $outsideTemp = $row["temperatur"];
     $outsideHum = $row["feuchtigkeit"];
+    $outsideDate = $row["datum"];
+
 }
 
+
+
+
+$differenz = $roofTemp - $outsideTemp;
 
  ?>
 
@@ -171,11 +181,9 @@ while ($row = $outsideResult->fetch_assoc())
                                 <i class="fa fa-flag-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">Differenz: -5 °C</div>
+                                <div class="huge"><?php echo "Differenz: " . $differenz . " °C"?></div>
                                 <div>Datum</div>
                             </div>
-
-
                           </div>
                       </div>
                       <a href="#">
@@ -198,8 +206,8 @@ while ($row = $outsideResult->fetch_assoc())
                                   <i class="fa fa-sun-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
                               </div>
                               <div class="col-xs-9 text-right">
-                                  <div class="huge"><?php echo $roofTemp; ?></div>
-                                  <div>Datum</div>
+                                  <div class="huge"><?php echo "Außen: " . $outsideTemp . " °C / " . $outsideHum . " %"; ?></div>
+                                  <div><?php echo "Datum: " . $outsideDate; ?></div>
                               </div>
 
 
@@ -228,8 +236,8 @@ while ($row = $outsideResult->fetch_assoc())
                                     <i class="fa fa-home fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Dach: 20 °C / 60%</div>
-                                    <div>Datum</div>
+                                    <div class="huge"><?php echo "Dach: " . $roofTemp . " °C / " . $roofHum . " %"; ?></div>
+                                    <div><?php echo "Datum: " .  $roofDate; ?></div>
                                 </div>
                             </div>
                         </div>
