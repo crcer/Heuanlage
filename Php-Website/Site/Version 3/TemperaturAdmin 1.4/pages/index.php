@@ -112,13 +112,13 @@ $farbCode;
 
 if ($differenz > 0) {
   $differenzVorzeichen = "+";
-  $farbCode = "#00AA00";
+  $farbCode = "#5CB85C";
 }
 elseif ($differenz == 0) {
   $farbCode = "#F0AD4E";
 }
 else {
-  $farbCode = "#FF0000";
+  $farbCode = "#D9534F";
 }
 
 
