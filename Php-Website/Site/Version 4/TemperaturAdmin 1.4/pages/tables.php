@@ -36,6 +36,17 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+
+        h1{
+        font-weight: bold;
+        color: #6F777D;
+        }
+
+
+    </style>
+
+
 </head>
 
 <body>
