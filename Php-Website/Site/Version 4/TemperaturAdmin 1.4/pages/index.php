@@ -34,7 +34,7 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <![endif]--> 
 
 <style>
 
@@ -135,11 +135,10 @@ $mysqluser="logger";
 $mysqlpwd="Ci5hnkwV8";
 $mysqldb="logger";
 
-// --- Schreibe Daten in die Datenbank ---
 $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
 mysqli_select_db($connection, $mysqldb) or die("Konnte die Datenbank nicht auswählen!");
 // Das ist der Quary zu erstellen der Daten in der Datenbank
-$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 100";
+$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 144";
 
 //Führe Quary aus.
 $rows = array();
