@@ -138,10 +138,10 @@ $mysqldb="logger";
 $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
 mysqli_select_db($connection, $mysqldb) or die("Konnte die Datenbank nicht auswählen!");
 // Das ist der Quary zu erstellen der Daten in der Datenbank
-$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 360";//144
+$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 144";//144
 
 //Führe Quary aus.
-$rows = array();
+$rowsRoof = array();
 $result = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nicht erfolgreich! :(");
 
 
@@ -149,10 +149,28 @@ $total_rows =  $result->num_rows;
 if($result)
 {
 
-  while ($row = $result->fetch_assoc()) {
-    $rows[] = $row;
+  while ($rowRoof = $result->fetch_assoc()) {
+    $rowsRoof[] = $rowRoof;
   }
 }
+
+
+$sql_query = "SELECT * FROM outside ORDER BY datum DESC LIMIT 144";//144
+//Führe Quary aus.
+$rowsOutside = array();
+$result = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nicht erfolgreich! :(");
+
+
+$total_rows =  $result->num_rows;
+if($result)
+{
+
+    while ($rowOutside = $result->fetch_assoc()) {
+        $rowsOutside[] = $rowOutside;
+    }
+}
+
+
 
 
  ?>
@@ -403,14 +421,14 @@ if($result)
 
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="test-chart"></div>
+                            <div id="roof-chart"></div>
                         </div>
 
 
                         <script>
                         new Morris.Line({
-                            element: 'test-chart',
-                            data: <?php echo json_encode($rows);?>,
+                            element: 'roof-chart',
+                            data: <?php echo json_encode($rowsRoof);?>,
 
                             xkey: 'datum',
                             ykeys: ['temperatur', 'feuchtigkeit'],
@@ -434,6 +452,50 @@ if($result)
 
                 <!-- /.col-lg-4 -->
             </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-line-chart fa-fw"></i> Verlauf 24h Außen
+                            </div>
+
+
+
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div id="outside-chart"></div>
+                            </div>
+
+
+                            <script>
+                                new Morris.Line({
+                                    element: 'outside-chart',
+                                    data: <?php echo json_encode($rowsOutside);?>,
+
+                                    xkey: 'datum',
+                                    ykeys: ['temperatur', 'feuchtigkeit'],
+                                    labels: ['Temperatur', 'Feuchtigkeit'],
+                                    pointSize: 2,
+                                    hideHover: 'auto',
+                                    resize: true
+                                });
+                            </script>
+
+
+
+
+
+
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                        <!-- /.panel -->
+                    </div>
+
+                    <!-- /.col-lg-4 -->
+                </div>
 
 
 
