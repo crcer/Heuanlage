@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -138,7 +138,7 @@ $mysqldb="logger";
 $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
 mysqli_select_db($connection, $mysqldb) or die("Konnte die Datenbank nicht auswählen!");
 // Das ist der Quary zu erstellen der Daten in der Datenbank
-$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 144";
+$sql_query = "SELECT * FROM roof ORDER BY datum DESC LIMIT 360";//144
 
 //Führe Quary aus.
 $rows = array();
@@ -396,7 +396,7 @@ if($result)
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-line-chart fa-fw"></i> Test-Graph
+                            <i class="fa fa-line-chart fa-fw"></i> Verlauf 24h Dach
                         </div>
 
 

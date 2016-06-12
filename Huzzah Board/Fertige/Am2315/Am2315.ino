@@ -23,7 +23,7 @@ Serial.begin(115200);
 }
 
 int value = 0;
-int queryDelay = 10000; //600000
+int queryDelay = 600000; //600000
 
 
 void loop() {
@@ -49,7 +49,7 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  // We now create a URI for the request
  //String url = "/testwifi/index.html";
  String passwort = "Ci5hnkwV8";
- String tabelle ="roof";
+ String tabelle ="outside";//roof, outside
  
  float temperatur;
  float feuchtigkeit;
