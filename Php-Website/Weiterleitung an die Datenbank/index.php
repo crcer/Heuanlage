@@ -16,6 +16,14 @@ if (isset($_GET['tabelle']) && isset($_GET['pw'])&& isset($_GET['temperatur'])&&
     $mysqlpwd=$pw;
     $mysqldb="logger";
 
+
+    if ($temperatur == "0" && $feuchtigkeit == "0")
+    {
+        echo "false";
+        return;
+    }
+
+
     // --- Schreibe Daten in die Datenbank ---
     $connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
     mysql_select_db($mysqldb, $connection) or die("Konnte die Datenbank nicht auswählen!");
@@ -29,5 +37,5 @@ if (isset($_GET['tabelle']) && isset($_GET['pw'])&& isset($_GET['temperatur'])&&
 //Query: http://192.168.178.29/index.php?tabelle=one&temperatur=11&feuchtigkeit=11&pw=Ci5hnkwV8
 }
 else {
-  echo "Es müssen alle Werte gesetzt sein!(tabelle, pw, temperatur, feuchtigkeit)";
+  echo ("false" . "\n" . "Es müssen alle Werte gesetzt sein!(tabelle, pw, temperatur, feuchtigkeit)");
 }
