@@ -107,6 +107,7 @@ while ($row = $outsideResult->fetch_assoc())
 
 
 $differenz = $roofTemp - $outsideTemp;
+$differenz = round($differenz, 1);
 $differenzVorzeichen = "";
 $farbCode;
 

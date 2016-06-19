@@ -49,7 +49,7 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  // We now create a URI for the request
  //String url = "/testwifi/index.html";
  String passwort = "Ci5hnkwV8";
- String tabelle ="roof";//roof, outside
+ String tabelle ="outside";//roof, outside
  
  float temperatur;
  float feuchtigkeit;
