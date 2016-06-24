@@ -23,7 +23,7 @@ Serial.begin(115200);
 }
 
 int value = 0;
-int queryDelay = 600000; //600000
+int queryDelay = 60000; //600000
 
 
 void loop() {

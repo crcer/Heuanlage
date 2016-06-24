@@ -84,6 +84,19 @@ while ($row = $roofResult->fetch_assoc())
     $roofHum = $row["feuchtigkeit"];
     $roofDate = $row["datum"];
 
+    $time = new DateTime();
+    $lastTime = date('Y-m-d h:i:s', strtotime($roofDate));
+    $differenz =  date_diff($time, $lastTime);
+
+    if ($differenz->days > 15)
+    {
+        $roofTemp = "--";
+        $roofHum = "--";
+    }
+    else{
+        echo $differenz->days;
+    }
+
 }
 
 // Das ist der Quary zu erstellen der Daten in der Datenbank
