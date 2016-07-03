@@ -204,36 +204,6 @@ if($result)
                 </button>
                 <a class="navbar-brand" href="index.php">TemperaturAdmin 1.4</a>
             </div>
-            <!-- /.navbar-header -->
-
-
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav" id="side-menu">
-
-
-                        <li>
-                            <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Übersicht</a>
-                        </li>
-
-
-                        <li>
-                            <a href="charts.php"><i class="fa fa-bar-chart-o fa-fw"></i> Graphen</a>
-                        </li>
-
-
-                        <li>
-                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tabellen</a>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
         </nav>
 
         <div id="page-wrapper">

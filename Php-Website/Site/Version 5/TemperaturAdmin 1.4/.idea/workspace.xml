@@ -33,14 +33,14 @@
         <entry file="file://$PROJECT_DIR$/pages/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="172" column="33" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
+              <caret line="193" column="22" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="22" />
               <folding>
-                <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-                <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-                <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-                <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-                <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-                <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+                <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+                <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+                <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+                <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+                <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+                <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
               </folding>
             </state>
           </provider>
@@ -97,8 +97,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -131,6 +131,38 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TemperaturAdmin 1.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TemperaturAdmin 1.4" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TemperaturAdmin 1.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TemperaturAdmin 1.4" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -156,6 +188,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -198,11 +236,14 @@
       <workItem from="1466344681845" duration="1879000" />
       <workItem from="1466603085653" duration="696000" />
       <workItem from="1466786734106" duration="1532000" />
+      <workItem from="1467537630724" duration="23000" />
+      <workItem from="1467537908064" duration="65000" />
+      <workItem from="1467538028662" duration="196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10926000" />
+    <option name="totallyTimeSpent" value="11210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -217,7 +258,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29264393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3022388" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -258,12 +299,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
@@ -273,12 +314,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
@@ -288,12 +329,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
@@ -303,12 +344,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
@@ -318,12 +359,57 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
@@ -333,28 +419,36 @@
         <state relative-caret-position="7429">
           <caret line="437" column="0" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../../../../index.php" />
+    <entry file="file://$PROJECT_DIR$/dist/css/sb-admin-2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5063">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="172" column="33" selection-start-line="172" selection-start-column="33" selection-end-line="172" selection-end-column="33" />
+          <caret line="193" column="22" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="22" />
           <folding>
-            <marker date="1466786939485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
-            <marker date="1466786939485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
-            <marker date="1466786939485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
-            <marker date="1466786939485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="1886:1918" ph="SELECT * FRO... date" />
+            <marker date="1467538103485" expanded="true" signature="1886:1952" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="2556:2625" ph="SELECT * FRO... outside" />
+            <marker date="1467538103485" expanded="true" signature="3629:3694" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3629:3697" ph="SELECT * FRO... roof" />
+            <marker date="1467538103485" expanded="true" signature="3990:4061" ph="SELECT * FRO... outside" />
           </folding>
         </state>
       </provider>
