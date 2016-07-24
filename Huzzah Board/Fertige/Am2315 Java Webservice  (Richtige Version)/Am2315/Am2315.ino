@@ -3,7 +3,7 @@
 #include <ESP8266WiFi.h>
 const char* ssid = "RPI";
 const char* password = "rpi123rpi123";
-const char* host = "10.11.12.1";
+const char* host = "192.168.2.2";
 
 void setup() {
 Serial.begin(115200);
@@ -69,6 +69,7 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
   for(int i = 0; i < 8; i++)
   {
     arrayHex[i] =  Wire.read();
+    Serial.println(arrayHex[i]);
   }
 
 
@@ -129,7 +130,7 @@ Serial.println("");
 
 void reconnect()
 {
-  if  (WiFi.status() !=WL_CONNECTED)
+  if  (WiFi.status() != WL_CONNECTED)
   {
               Serial.print("Verbinde zum WLAN: ");
               Serial.println(ssid);
