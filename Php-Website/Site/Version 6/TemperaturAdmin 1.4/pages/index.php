@@ -103,10 +103,6 @@ while ($row = $roofResult->fetch_assoc())
         $roofTemp = "--";
         $roofHum = "--";
     }
-    else{
-        echo $differenzRoof->i;
-    }
-
 }
 
 $sql_query = "SELECT * FROM data WHERE sensor='outside' ORDER BY datum DESC LIMIT 1";
@@ -133,11 +129,6 @@ while ($row = $outsideResult->fetch_assoc())
         $outsideTemp = "--";
         $outsideHum = "--";
     }
-    else{
-        echo $differenzOutside->i;
-        echo $differenzOutside->i;
-    }
-
 }
 
 
@@ -280,7 +271,7 @@ if($result)
                               </div>
                               <div class="col-xs-9 text-right">
                                   <div class="huge"><?php echo "Außen: " . $outsideTemp . " °C / " . $outsideHum . " %"; ?></div>
-                                  <div><?php echo "Datum: " . $outsideDate; ?></div>
+                                  <div><?php echo "Vor: " . $differenzOutside->format("%d Tagen, %h Stunden und %i Minuten"); ?></div>
                               </div>
 
 
@@ -310,7 +301,7 @@ if($result)
                                 </div>
                                 <div class="col-xs-9 text-right">
                                    <div class="huge"><?php echo "Dach: " . $roofTemp . " °C"; ?></div>
-                                    <div><?php echo "Datum: " .  $roofDate; ?></div>
+                                    <div><?php echo "Vor: " .  $differenzRoof->format("%d Tagen, %h Stunden und %i Minuten"); ?></div>
                                 </div>
                             </div>
                         </div>
