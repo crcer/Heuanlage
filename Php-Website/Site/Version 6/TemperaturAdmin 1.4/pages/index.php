@@ -54,6 +54,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+    
+    
+$time = new DateTime();
 
 $mysqlhost="localhost";
 $mysqluser="logger";
@@ -82,17 +85,26 @@ while ($row = $roofResult->fetch_assoc())
     $roofHum = $row["feuchtigkeit"];
     $roofDate = $row["datum"];
 
-    $time = new DateTime();
-    $lastTime = date('Y-m-d h:i:s', strtotime($roofDate));
-    $differenz =  date_diff($time, $lastTime);
+    //working
+    /*
+    $date_expire = '2014-08-06 00:00:00';    
+    $date = new DateTime($date_expire);
+    $now = new DateTime();
+    echo date_diff($now, $date)->format("%d days, %h hours and %i minuts");
+    */
+    
+    //rechnet den Zeitunterschied aus :)
+    $lastRoofTime = new DateTime($roofDate);
+    $differenzRoof =  date_diff($time, $lastRoofTime);
 
-    if ($differenz->days > 15)
+    //i ist in Minuten
+    if ($differenzRoof->i > 15)
     {
         $roofTemp = "--";
         $roofHum = "--";
     }
     else{
-        echo $differenz->days;
+        echo $differenzRoof->i;
     }
 
 }
@@ -110,6 +122,21 @@ while ($row = $outsideResult->fetch_assoc())
     $outsideTemp = $row["temperatur"];
     $outsideHum = $row["feuchtigkeit"];
     $outsideDate = $row["datum"];
+    
+    //rechnet den Zeitunterschied aus :)
+    $lastOutsideTime = new DateTime($outsideDate);
+    $differenzOutside =  date_diff($time, $lastOutsideTime);
+
+    
+    if ($differenzOutside->i > 15)
+    {
+        $outsideTemp = "--";
+        $outsideHum = "--";
+    }
+    else{
+        echo $differenzOutside->i;
+        echo $differenzOutside->i;
+    }
 
 }
 

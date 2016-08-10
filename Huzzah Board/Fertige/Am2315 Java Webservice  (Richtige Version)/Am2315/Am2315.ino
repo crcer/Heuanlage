@@ -48,7 +48,7 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  
  // We now create a URI for the request
  String passwort = "Ci5hnkwV8";
- String sensor ="roof";//roof, outside
+ String sensor ="outside";//roof, outside
  
  float temperatur;
  float feuchtigkeit;
@@ -69,7 +69,6 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
   for(int i = 0; i < 8; i++)
   {
     arrayHex[i] =  Wire.read();
-    Serial.println(arrayHex[i]);
   }
 
 
