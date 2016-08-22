@@ -1,0 +1,46 @@
+Trigger:
+Fehler: http://stackoverflow.com/questions/7408088/syntax-error-for-mysql-declaration-of-variable
+
+
+Ohne Wechsel der Sensoren:
+
+DELIMITER //
+
+CREATE TRIGGER diff BEFORE INSERT ON data
+  FOR EACH ROW
+  BEGIN
+    DECLARE temp DOUBLE;
+    DECLARE hum DOUBLE;
+    SELECT temperatur INTO temp FROM data ORDER BY datum DESC LIMIT 1;
+   SELECT feuchtigkeit INTO hum FROM data ORDER BY datum DESC LIMIT 1;
+   INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (NEW.temperatur-temp, NEW.feuchtigkeit-hum);
+END//
+
+DELIMITER ;
+
+
+Mit Wechsel:
+
+
+DELIMITER //
+
+CREATE TRIGGER diff BEFORE INSERT ON data
+  FOR EACH ROW
+  BEGIN
+    DECLARE temp DOUBLE;
+    DECLARE hum DOUBLE;
+    DECLARE sensor varchar(20);
+    SELECT temperatur INTO temp FROM data ORDER BY datum DESC LIMIT 1;
+    SELECT feuchtigkeit INTO hum FROM data ORDER BY datum DESC LIMIT 1;
+    SELECT sensor INTO sensor FROM data ORDER BY datum DESC LIMIT 1;
+    
+    IF(sensor = "outside") THEN
+    INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (NEW.temperatur-temp, NEW.feuchtigkeit-hum);
+ELSE
+   INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (temp - NEW.temperatur, hum - NEW.feuchtigkeit);
+END IF;
+    
+   
+END//
+
+DELIMITER ;

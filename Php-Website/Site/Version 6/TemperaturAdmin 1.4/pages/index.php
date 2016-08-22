@@ -34,24 +34,21 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]--> 
+    <![endif]-->
 
-<style>
-
-    h1{
-    font-weight: bold;
-    color: #6F777D;
-    }
-
-
-</style>
+    <style>
+        h1 {
+            font-weight: bold;
+            color: #6F777D;
+        }
+    </style>
 
 
 
 
 
 
-<?php
+    <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
     
@@ -165,7 +162,6 @@ $mysqldb="logger";
 
 $connection=mysqli_connect($mysqlhost, $mysqluser, $mysqlpwd) or die ("Konnte die Verbindung zur Datenbank nicht aufbauen! ");
 mysqli_select_db($connection, $mysqldb) or die("Konnte die Datenbank nicht auswählen!");
-// Das ist der Quary zu erstellen der Daten in der Datenbank
 $sql_query = "SELECT * FROM data WHERE sensor='roof' ORDER BY datum DESC LIMIT 144";//144
 
 //Führe Quary aus.
@@ -197,12 +193,31 @@ if($result)
     }
 }
 
+    
+    
+    
+    //differenzen finden
+$sql_query = "SELECT * FROM differenzen ORDER BY datum DESC LIMIT 72";//144
+
+//Führe Quary aus.
+$rowsDiff = array();
+$result = mysqli_query($connection,$sql_query) or die("Fehler! Auslesen nicht erfolgreich! :(");
+
+
+$total_rows =  $result->num_rows;
+if($result)
+{
+
+  while ($rowDiff = $result->fetch_assoc()) {
+    $rowsDiff[] = $rowDiff;
+  }
+}
  ?>
 
- <link rel="stylesheet" href="../morris/morris.css">
- <script src="../morris/jquery.min.js"></script>
- <script src="../morris/raphael-min.js"></script>
- <script src="../morris/morris.min.js"></script>
+        <link rel="stylesheet" href="../morris/morris.css">
+        <script src="../morris/jquery.min.js"></script>
+        <script src="../morris/raphael-min.js"></script>
+        <script src="../morris/morris.min.js"></script>
 
 
 </head>
@@ -236,29 +251,32 @@ if($result)
 
 
 
-              <div class="col-lg-12 col-md-6">
-                  <div class="panel panel-default" style=<?php echo "border-color:" . $farbCode; ?>>
-                      <div class="panel-heading" style=<?php echo "background-color:" . $farbCode; ?>> <!-- style=<?php echo "background-color:" . $farbCode; ?> -->
-                          <div class="row">
+                <div class="col-lg-12 col-md-6">
+                    <div class="panel panel-default" style=<?php echo "border-color:" . $farbCode; ?>>
+                        <div class="panel-heading" style=<?php echo "background-color:" . $farbCode; ?>>
+                            <!-- style=<?php echo "background-color:" . $farbCode; ?> -->
+                            <div class="row">
 
-                            <div class="col-xs-3">
-                                <i class="fa fa-flag-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
+                                <div class="col-xs-3">
+                                    <i class="fa fa-flag-o fa-5x"></i>
+                                    <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">
+                                        <?php echo "Differenz: " . $differenzVorzeichen . $differenz . " °C"?>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge"><?php echo "Differenz: " . $differenzVorzeichen . $differenz . " °C"?></div>
-                                <div>Datum</div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer" style=<?php echo "color:" . $farbCode; ?>>
+                                <span class="pull-left"></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
                             </div>
-                          </div>
-                      </div>
-                      <a href="#">
-                          <div class="panel-footer" style=<?php echo "color:" . $farbCode; ?>>
-                              <span class="pull-left">View Details</span>
-                              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                              <div class="clearfix"></div>
-                          </div>
-                      </a>
-                  </div>
-              </div>
+                        </a>
+                    </div>
+                </div>
 
 
                 <div class="col-lg-6 col-md-6">
@@ -266,20 +284,25 @@ if($result)
                         <div class="panel-heading">
                             <div class="row">
 
-                              <div class="col-xs-3">
-                                  <i class="fa fa-sun-o fa-5x"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
-                              </div>
-                              <div class="col-xs-9 text-right">
-                                  <div class="huge"><?php echo "Außen: " . $outsideTemp . " °C / " . $outsideHum . " %"; ?></div>
-                                  <div><?php echo "Vor: " . $differenzOutside->format("%d Tagen, %h Stunden und %i Minuten"); ?></div>
-                              </div>
+                                <div class="col-xs-3">
+                                    <i class="fa fa-sun-o fa-5x"></i>
+                                    <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">
+                                        <?php echo "Außen: " . $outsideTemp . " °C / " . $outsideHum . " %"; ?>
+                                    </div>
+                                    <div>
+                                        <?php echo "Vor " . $differenzOutside->format("%d D, %h H und %i m"); ?>
+                                    </div>
+                                </div>
 
 
                             </div>
                         </div>
                         <a href="#">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left"></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -300,14 +323,19 @@ if($result)
                                     <i class="fa fa-home fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                   <div class="huge"><?php echo "Dach: " . $roofTemp . " °C"; ?></div>
-                                    <div><?php echo "Vor: " .  $differenzRoof->format("%d Tagen, %h Stunden und %i Minuten"); ?></div>
+                                    <div class="huge">
+                                        <?php echo "Dach: " . $roofTemp . " °C"; ?>
+                                    </div>
+                                    <div>
+                                        <?php echo "Vor " .  $differenzRoof->format("%d D, %h H und %i M"); ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#"> <!--Hier bei href kommt der Link rein!-->
+                        <a href="#">
+                            <!--Hier bei href kommt der Link rein!-->
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left"></span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -319,17 +347,18 @@ if($result)
 
 
                 <div class="col-lg-6 col-md-6">
-                    <div class="panel panel-default" >
+                    <div class="panel panel-default">
                         <div class="panel-heading" style="background-color:#A7B3BC">
                             <div class="row">
 
-                              <div class="col-xs-3">
-                                  <i class="fa fa-leaf fa-5x" style="color:#FFFFFF"></i> <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
-                              </div>
-                              <div class="col-xs-9 text-right">
-                                  <div class="huge" style="color:#FFFFFF">Box 1: - °C / -%</div>
-                                  <div style="color:#FFFFFF">Datum</div>
-                              </div>
+                                <div class="col-xs-3">
+                                    <i class="fa fa-leaf fa-5x" style="color:#FFFFFF"></i>
+                                    <!--https://fortawesome.github.io/Font-Awesome/icons/   ===> Leaf or Sun-o or Fire are good too-->
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge" style="color:#FFFFFF">Box 1: - °C / -%</div>
+                                    <div style="color:#FFFFFF">Datum</div>
+                                </div>
 
 
                             </div>
@@ -362,7 +391,8 @@ if($result)
                                 </div>
                             </div>
                         </div>
-                        <a href="#"> <!--Hier bei href kommt der Link rein!-->
+                        <a href="#">
+                            <!--Hier bei href kommt der Link rein!-->
                             <div class="panel-footer">
                                 <span class="pull-left" style="color:#A7B3BC">View Details</span>
                                 <span class="pull-right" style="color:#A7B3BC"><i class="fa fa-arrow-circle-right"></i></span>
@@ -373,7 +403,7 @@ if($result)
                 </div>
 
 
-                <div  class="col-lg-6 col-md-6">
+                <div class="col-lg-6 col-md-6">
                     <div class="panel panel-default">
                         <div class="panel-heading" style="background-color:#A7B3BC">
                             <div class="row">
@@ -386,7 +416,8 @@ if($result)
                                 </div>
                             </div>
                         </div>
-                        <a href="#"> <!--Hier bei href kommt der Link rein!-->
+                        <a href="#">
+                            <!--Hier bei href kommt der Link rein!-->
                             <div class="panel-footer">
                                 <span class="pull-left" style="color:#A7B3BC">View Details</span>
                                 <span class="pull-right" style="color:#A7B3BC"><i class="fa fa-arrow-circle-right"></i></span>
@@ -397,57 +428,101 @@ if($result)
                 </div>
 
 
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-line-chart fa-fw"></i> Verlauf 24H Differenzen
+                            </div>
+
+
+
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div id="diff-chart"></div>
+                            </div>
+
+
+                            <script>
+                                new Morris.Line({
+                                    element: 'diff-chart',
+                                    data: <?php echo json_encode($rowsDiff);?>,
+
+                                    xkey: 'datum',
+                                    //ykeys: ['temperatur', 'feuchtigkeit'],
+                                    ykeys: ['temperatur'],
+                                    //labels: ['Temperatur', 'Feuchtigkeit'],
+                                    labels: ['Temperatur'],
+                                    pointSize: 2,
+                                    hideHover: 'auto',
+                                    resize: true
+                                });
+                            </script>
 
 
 
 
 
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-line-chart fa-fw"></i> Verlauf 24h Dach
+                            <!-- /.panel-body -->
                         </div>
-
-
-
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="roof-chart"></div>
-                        </div>
-
-
-                        <script>
-                        new Morris.Line({
-                            element: 'roof-chart',
-                            data: <?php echo json_encode($rowsRoof);?>,
-
-                            xkey: 'datum',
-                            //ykeys: ['temperatur', 'feuchtigkeit'],
-                            ykeys: ['temperatur'],
-                            //labels: ['Temperatur', 'Feuchtigkeit'],
-                            labels: ['Temperatur'],
-                            pointSize: 2,
-                            hideHover: 'auto',
-                            resize: true
-                        });
-                        </script>
-
-
-
-
-
-
-                        <!-- /.panel-body -->
+                        <!-- /.panel -->
+                        <!-- /.panel -->
                     </div>
-                    <!-- /.panel -->
-                    <!-- /.panel -->
+
+                    <!-- /.col-lg-4 -->
                 </div>
 
-                <!-- /.col-lg-4 -->
-            </div>
+
+
+
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-line-chart fa-fw"></i> Verlauf 24h Dach
+                            </div>
+
+
+
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div id="roof-chart"></div>
+                            </div>
+
+
+                            <script>
+                                new Morris.Line({
+                                    element: 'roof-chart',
+                                    data: <?php echo json_encode($rowsRoof);?>,
+
+                                    xkey: 'datum',
+                                    //ykeys: ['temperatur', 'feuchtigkeit'],
+                                    ykeys: ['temperatur'],
+                                    //labels: ['Temperatur', 'Feuchtigkeit'],
+                                    labels: ['Temperatur'],
+                                    pointSize: 2,
+                                    hideHover: 'auto',
+                                    resize: true
+                                });
+                            </script>
+
+
+
+
+
+
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                        <!-- /.panel -->
+                    </div>
+
+                    <!-- /.col-lg-4 -->
+                </div>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -495,32 +570,28 @@ if($result)
 
 
 
-            <!-- /.row -->
+                <!-- /.row -->
+            </div>
+            <!-- /#page-wrapper -->
+
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
+        <!-- jQuery -->
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+        <!-- Morris Charts JavaScript -->
+        <script src="../bower_components/raphael/raphael-min.js"></script>
+        <!--  <script src="../bower_components/morrisjs/morris.min.js"></script> -->
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../bower_components/raphael/raphael-min.js"></script>
-  <!--  <script src="../bower_components/morrisjs/morris.min.js"></script> -->
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
-
-
-
+        <!-- Custom Theme JavaScript -->
+        <script src="../dist/js/sb-admin-2.js"></script>
 
 
 
