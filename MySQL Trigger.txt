@@ -32,13 +32,13 @@ CREATE TRIGGER diff BEFORE INSERT ON data
     DECLARE sensor varchar(20);
     SELECT temperatur INTO temp FROM data ORDER BY datum DESC LIMIT 1;
     SELECT feuchtigkeit INTO hum FROM data ORDER BY datum DESC LIMIT 1;
-    SELECT sensor INTO sensor FROM data ORDER BY datum DESC LIMIT 1;
     
-    IF(sensor = "outside") THEN
+    
+    IF(NEW.sensor = "roof") THEN
     INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (NEW.temperatur-temp, NEW.feuchtigkeit-hum);
 ELSE
    INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (temp - NEW.temperatur, hum - NEW.feuchtigkeit);
-END IF;
+END IF; 
     
    
 END//
