@@ -35,9 +35,9 @@ CREATE TRIGGER diff BEFORE INSERT ON data
     
     
     IF(NEW.sensor = "roof") THEN
-    INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (NEW.temperatur-temp, NEW.feuchtigkeit-hum);
+    INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (ROUND(NEW.temperatur-temp, 1), ROUND(NEW.feuchtigkeit-hum, 1));
 ELSE
-   INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (temp - NEW.temperatur, hum - NEW.feuchtigkeit);
+   INSERT INTO differenzen (temperatur, feuchtigkeit) VALUES (ROUND(temp - NEW.temperatur, 1), ROUND(hum - NEW.feuchtigkeit, 1));
 END IF; 
     
    

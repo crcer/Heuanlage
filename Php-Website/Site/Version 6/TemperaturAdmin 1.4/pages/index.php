@@ -197,7 +197,7 @@ if($result)
     
     
     //differenzen finden
-$sql_query = "SELECT * FROM differenzen ORDER BY datum DESC LIMIT 72";//144
+$sql_query = "SELECT * FROM differenzen ORDER BY datum DESC LIMIT 144";
 
 //Führe Quary aus.
 $rowsDiff = array();
