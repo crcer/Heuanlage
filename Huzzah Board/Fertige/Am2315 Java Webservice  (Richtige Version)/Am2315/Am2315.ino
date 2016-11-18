@@ -50,8 +50,8 @@ Serial.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  String passwort = "Ci5hnkwV8";
  String sensor ="roof";//roof, outside
  
- float temperatur;
- float feuchtigkeit;
+ float temperatur = null;
+ float feuchtigkeit = null;
 
 
 
